@@ -226,3 +226,188 @@ This platform is configured to identify and alert on a wide range of security ev
 
 ---
 
+## Tools & Technologies Used
+
+### **Monitoring & SIEM**
+- **Elastic Stack (ELK)** – Log aggregation, search, and visualization
+- **Wazuh** – HIDS, log analysis, and compliance monitoring
+- **Grafana** – Real-time dashboards and alerting
+
+### **Detection & Analysis**
+- **Suricata** – Network-based intrusion detection
+- **YARA** – Malware identification and classification
+- **Sigma** – Generic signature format for log detection
+
+### **Automation & Orchestration**
+- **Ansible** – Configuration management and response automation
+- **Python** – Custom scripts, playbooks, and API integrations
+- **Docker** – Containerization of services and tools
+
+### **Threat Intelligence**
+- **AbuseIPDB API** – IP reputation checks
+- **VirusTotal API** – File and hash analysis
+- **AlienVault OTX** – Open threat intelligence feeds
+
+### **Data Storage & Processing**
+- **PostgreSQL** – Relational data storage for alerts and configs
+- **Elasticsearch** – Scalable log and event storage
+- **Apache Kafka** – Event streaming and message brokering
+
+### **Web & Dashboard**
+- **React.js** – Frontend dashboard UI
+- **FastAPI / Flask** – Backend APIs and model serving
+- **NGINX** – Reverse proxy and load balancing
+
+### **Deployment & DevOps**
+- **GitHub Actions / GitLab CI** – CI/CD pipelines
+- **Terraform** – Infrastructure as Code (if cloud-deployed)
+- **Kubernetes / Docker Compose** – Container orchestration
+
+---
+
+## Security Technologies Implemented
+
+| Category | Technologies |
+|----------|--------------|
+| **Network Security** | Suricata, pfSense, iptables, NetFlow analyzers |
+| **Endpoint Security** | Osquery, OSSEC, custom EDR agents |
+| **Log Management** | Elasticsearch, Logstash, Rsyslog, Winlogbeat |
+| **Threat Hunting** | MITRE ATT&CK Navigator, Jupyter Notebooks, Zeek |
+| **Forensics** | Autopsy, Volatility, Wireshark, FTK Imager (simulated) |
+| **Encryption & PKI** | OpenSSL, Let's Encrypt, Hashicorp Vault (for secrets) |
+| **Access Control** | Keycloak, OAuth2, RBAC models, MFA integration |
+
+---
+
+## Skill Categories Demonstrated
+
+| Skill Category | Specific Skills Demonstrated |
+|----------------|-----------------------------|
+| **Security Operations** | SIEM management, incident response, log analysis, threat hunting |
+| **Threat Detection** | Signature writing, anomaly detection, IOC matching, behavior analysis |
+| **Automation & Scripting** | Python, Bash, Ansible, API integration, playbook development |
+| **Cloud & Container Security** | Cloud log ingestion, container monitoring, IaC security |
+| **Network Defense** | Traffic analysis, IDS/IPS configuration, firewall management |
+| **Compliance & Reporting** | Audit automation, report generation, control mapping (NIST/ISO) |
+| **Software Development** | Full-stack web dev, database design, REST APIs, microservices |
+| **ML for Security** | Feature engineering, model training, real-time inference, drift detection |
+| **System Architecture** | Scalable design, high availability, secure deployment, monitoring |
+
+---
+
+## Industry-Standard Stack
+
+### **This project aligns with enterprise security stack conventions:**
+- **SIEM Layer:** Elastic SIEM / Wazuh (Splunk-alternative OSS)
+- **Detection Layer:** Suricata + Sigma rules (compatible with enterprise EDR)
+- **Orchestration Layer:** Ansible + Python (SOAR-like automation)
+- **Data Layer:** ELK Stack (industry-standard log management)
+- **Interface Layer:** React + FastAPI (modern, scalable web stack)
+- **Deployment:** Docker + CI/CD (cloud-native, reproducible deployments)
+
+### **Compliance & Framework Alignment:**
+- **MITRE ATT&CK** – Detection coverage mapped to tactics/techniques
+- **NIST Cybersecurity Framework** – Identify, Protect, Detect, Respond, Recover
+- **ISO 27001** – Controls automated and reported
+- **SOC 2** – Evidence collection for security auditing
+
+---
+
+
+
+## IMPLEMENTATION
+
+---
+
+### PROJECT STRUCTURE
+
+```
+cybersecurity-platform-proj4/
+├── 📁 config/
+│   ├── suricata/               # Suricata rules and configs
+│   ├── wazuh/                  # Wazuh agent/server configs
+│   ├── elk/                    # Elasticsearch, Logstash, Kibana configs
+│   ├── nginx/                  # Reverse proxy and SSL config
+│   ├── ansible/                # Ansible playbooks and roles
+│   └── docker-compose.yml      # Multi-container setup
+├── 📁 detection/
+│   ├── sigma_rules/            # Sigma detection rules (.yml)
+│   ├── yara_rules/             # YARA malware signatures
+│   ├── suricata_rules/         # Custom Suricata rules
+│   ├── anomaly_detection/      # ML-based detection scripts
+│   └── correlation_rules/      # Cross-log correlation logic
+├── 📁 scripts/
+│   ├── automation/
+│   │   ├── incident_response.py
+│   │   ├── firewall_block.py
+│   │   └── alert_escalation.py
+│   ├── data_processing/
+│   │   ├── log_parser.py
+│   │   ├── log_enricher.py
+│   │   └── threat_intel_feeds.py
+│   └── monitoring/
+│       ├── health_check.py
+│       └── performance_monitor.py
+├── 📁 ml_models/
+│   ├── train_anomaly_detector.ipynb
+│   ├── models/                 # Saved models (.pkl, .h5)
+│   ├── features/               # Feature engineering scripts
+│   └── inference/              # Real-time prediction scripts
+├── 📁 web_app/
+│   ├── backend/
+│   │   ├── app/                # FastAPI/Flask app
+│   │   │   ├── routes/
+│   │   │   ├── models/
+│   │   │   ├── utils/
+│   │   │   └── main.py
+│   │   ├── requirements.txt
+│   │   └── Dockerfile
+│   └── frontend/
+│       ├── public/
+│       ├── src/
+│       │   ├── components/     # React/Vue components
+│       │   ├── pages/          # Dashboard, Alerts, Reports
+│       │   └── App.js
+│       ├── package.json
+│       └── Dockerfile
+├── 📁 database/
+│   ├── schemas/                # SQL table schemas
+│   ├── migrations/             # Alembic/versioned migrations
+│   └── seed_data/              # Sample data for demos
+├── 📁 docs/
+│   ├── architecture.md         # System design overview
+│   ├── setup_guide.md          # Installation instructions
+│   ├── user_manual.md          # How to use the dashboard
+│   ├── api_documentation.md    # API endpoints (OpenAPI)
+│   └── incident_runbooks/      # Step-by-step response guides
+├── 📁 logs/                    # (Ignored in git – example only)
+│   ├── ingested/
+│   ├── processed/
+│   └── alerts/
+├── 📁 tests/
+│   ├── unit/                   # Unit tests for scripts
+│   ├── integration/            # Integration tests
+│   ├── security/               # Penetration test scripts
+│   └── data/                   # Sample log files for testing
+├── 📁 forensics/
+│   ├── evidence_collection/    # Scripts to gather forensics data
+│   ├── timeline_generator.py   # Attack timeline builder
+│   └── memory_analysis/        # Volatility scripts (if applicable)
+├── 📁 reports/
+│   ├── templates/              # Jinja2/HTML report templates
+│   ├── generators/             # Scripts to generate PDF/HTML reports
+│   └── examples/               # Sample compliance reports
+├── 📁 integrations/
+│   ├── siem/                   # Splunk, Elastic SIEM connectors
+│   ├── ticketing/              # Jira, ServiceNow APIs
+│   ├── cloud/                  # AWS, Azure, GCP log collectors
+│   └── messaging/              # Slack, Teams, Email webhooks
+├── .env.example                # Environment variables template
+├── .gitignore
+├── LICENSE
+├── README.md                   # Project overview, setup, usage
+├── requirements.txt            # Python dependencies
+├── docker-compose.prod.yml     # Production deployment
+└── Makefile                    # Automation of common tasks
+```
+
