@@ -113,13 +113,14 @@ This platform is configured to identify and alert on a wide range of security ev
    - Generates visual attack chain diagrams
 
 5. Compliance & Reporting
-
-  Produces scheduled/on-demand reports for:
+   
+   Produces scheduled/on-demand reports for:
+   
    - Daily security posture summaries
    - Incident response documentation
    - Compliance audit evidence (PDF/HTML/CSV formats)
 
-6. Education & Demonstration
+7. Education & Demonstration
 
    - Includes training modules with guided attack/defense scenarios
    - Documents architecture and detection logic for learning purposes
