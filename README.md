@@ -127,12 +127,6 @@ Produces scheduled/on-demand reports for:
 
 ## Technical Objectives Achieved:
 
-Here's the **Technical Objectives Achieved** section in a clear tabular format, structured to show **Component**, **What I Built**, and **Why It Matters**:
-
----
-
-## 🛠️ Technical Objectives Achieved:
-
 |                Component                 |                                     What I Built                                                             | Why It Matters |
 |------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------|
 | **Log Aggregation Engine**               | Centralized pipeline using Elastic Stack/Wazuh, ingesting logs from firewalls, endpoints, and cloud sources. | Eliminates visibility gaps; enables cross-source correlation and holistic monitoring. |
@@ -149,4 +143,84 @@ Here's the **Technical Objectives Achieved** section in a clear tabular format, 
 
 ---
 
+## ML & AI Objectives Achieved
+
+| Objective | What Was Implemented | Why It Matters |
+|-----------|---------------------|----------------|
+| **Anomaly Detection Models** | Unsupervised models (Isolation Forest, Autoencoders) trained on network traffic and user behavior logs. | Detects zero-day and unknown threats that signature-based systems miss. |
+| **Threat Classification** | Multi-class classifiers (Random Forest, XGBoost) to categorize alerts (Malware, DDoS, Insider Threat, etc.). | Reduces alert fatigue by auto-categorizing threats for prioritized response. |
+| **Feature Engineering Pipeline** | Automated extraction of time-based, statistical, and behavioral features from raw logs (sessions, entropy, rate metrics). | Transforms raw data into ML-ready features, improving model accuracy and adaptability. |
+| **Model Persistence & Serving** | Serialized models saved via `pickle`/`joblib` and served via Flask/FastAPI endpoints for real-time inference. | Enables consistent, low-latency predictions in production without retraining overhead. |
+| **Continuous Model Evaluation** | Automated drift detection and performance monitoring (precision/recall) with retraining triggers. | Ensures models remain effective as attack patterns and network behavior evolve. |
+
+---
+
+## Network Programming Objectives
+
+| Objective | What Was Built | Why It Matters |
+|-----------|----------------|----------------|
+| **Packet Capture & Analysis** | Custom sniffers using `Scapy`/`libpcap` to capture and dissect live traffic for threat detection. | Enables deep packet inspection for detecting malicious payloads and protocol anomalies. |
+| **Protocol Parsers** | Parsers for DHCP, DNS, HTTP/S, and proprietary application protocols to extract IOCs. | Facilitates detection of C2 communications, data exfiltration, and protocol abuse. |
+| **Network Scanning Integration** | Integration with `nmap`/`Masscan` for periodic vulnerability assessment and asset discovery. | Maintains an updated asset inventory and identifies misconfigured/open services. |
+| **Traffic Flow Analysis** | NetFlow/IPFIX collectors to monitor bandwidth, top talkers, and suspicious flow patterns. | Identifies DDoS, lateral movement, and data exfiltration at scale with minimal overhead. |
+
+---
+
+## Software Architecture Objectives
+
+| Objective | What Was Achieved | Why It Matters |
+|-----------|-------------------|----------------|
+| **Microservices Design** | Decoupled services (log ingestion, detection, response, reporting) communicating via REST/gRPC. | Enables independent scaling, maintenance, and technology flexibility per component. |
+| **Event-Driven Architecture** | Kafka/RabbitMQ message queues for asynchronous processing of alerts and logs. | Ensures high throughput, fault tolerance, and real-time event processing. |
+| **API-First Development** | Comprehensive REST APIs for every major module, documented with OpenAPI/Swagger. | Allows easy integration with external tools and automation pipelines. |
+| **Containerization & Orchestration** | Docker containers orchestrated with Kubernetes/Docker Compose for consistent deployment. | Simplifies deployment across environments (dev, staging, production) and improves scalability. |
+
+---
+
+## Web Development Objectives
+
+| Objective | What Was Delivered | Why It Matters |
+|-----------|-------------------|----------------|
+| **Responsive Dashboard** | React/Vue.js frontend with real-time updates via WebSockets for live alert streaming. | Provides analysts with a mobile-friendly, real-time view of security posture from anywhere. |
+| **Interactive Visualization** | D3.js/Chart.js graphs for attack maps, timeline analysis, and threat heatmaps. | Enables intuitive visual analysis of complex attack patterns and trends. |
+| **Role-Based UI** | Dynamic UI components that change based on user roles (Analyst, Admin, Auditor). | Ensures users see only relevant data and actions, improving usability and security. |
+| **Secure Authentication Frontend** | JWT-based session management with token refresh and secure logout. | Protects against session hijacking and ensures only authorized access to the platform. |
+
+---
+
+## System Integration Objectives
+
+| Objective | What Was Integrated | Why It Matters |
+|-----------|---------------------|----------------|
+| **SIEM/SOAR Integration** | Bi-directional APIs with Splunk, Elastic SIEM, and Cortex XSOAR for alert sharing. | Fits into existing security ecosystems, avoiding tool redundancy and alert silos. |
+| **Ticketing System Sync** | Two-way sync with Jira, ServiceNow, and Zendesk for incident tracking. | Maintains audit trails and aligns security incidents with organizational workflows. |
+| **Cloud Provider Hooks** | AWS CloudTrail, Azure Monitor, and GCP Logging integrations for cloud threat detection. | Extends visibility and control into cloud environments where traditional monitoring fails. |
+| **Endpoint Detection Integration** | Connectors to CrowdStrike, SentinelOne, and Windows Event Collector for endpoint telemetry. | Correlates network and endpoint data for comprehensive attack chain visibility. |
+
+---
+
+## Data Management Objectives
+
+| Objective | What Was Implemented | Why It Matters |
+|-----------|----------------------|----------------|
+| **Scalable Storage Architecture** | Tiered storage: hot (Elasticsearch), warm (Parquet files), cold (S3/Glacier) for logs. | Balances performance and cost while retaining data for compliance and forensics. |
+| **Data Retention Policies** | Automated lifecycle policies based on data type (logs, PCAPs, alerts) and regulations. | Ensures compliance with GDPR, HIPAA, etc., while optimizing storage costs. |
+| **Data Encryption** | Encryption at rest (AES-256) and in transit (TLS 1.3) for all sensitive data. | Protects evidence and logs from tampering or exposure, even if storage is compromised. |
+| **Backup & Recovery** | Scheduled backups of configurations, rules, and critical databases with recovery playbooks. | Ensures business continuity and quick restoration after failures or ransomware attacks. |
+
+---
+
+## All Technical Objectives Achieved
+
+| Category | Objectives Met | Key Outcome |
+|----------|----------------|-------------|
+| **ML & AI** | 5/5 | Intelligent detection beyond rule-based systems |
+| **Network Programming** | 4/4 | Deep network visibility and analysis |
+| **Software Architecture** | 4/4 | Scalable, maintainable, and modular platform |
+| **Web Development** | 4/4 | Professional, real-time, and secure interface |
+| **System Integration** | 4/4 | Seamless operation in enterprise environments |
+| **Data Management** | 4/4 | Efficient, compliant, and secure data handling |
+| **Total** | **25/25** | **Complete, production-ready cybersecurity platform** |
+
+---
 
