@@ -89,41 +89,42 @@ This platform is configured to identify and alert on a wide range of security ev
 
 1. Continuous Monitoring
 
-- Aggregates logs from firewalls, servers, endpoints, and cloud services in real-time
-- Correlates events across sources to identify multi-stage attacks
+   - Aggregates logs from firewalls, servers, endpoints, and cloud services in real-time
+   - Correlates events across sources to identify multi-stage attacks
 
 2. Automated Analysis
    
-- Applies detection rules (signature + behavior-based) to identify threats
-- Uses threat intelligence feeds to enrich alerts with contextual data (IP/Domain reputation, malware info)
+   - Applies detection rules (signature + behavior-based) to identify threats
+   - Uses threat intelligence feeds to enrich alerts with contextual data (IP/Domain reputation, malware info)
 
 3. Incident Response Automation
    
-- Executes predefined playbooks to:
-- Isolate compromised endpoints
-- Block malicious IPs at the firewall
-- Disable user accounts
-- Quarantine suspicious files
-- Notifies security teams via email, Slack, or ticketing systems
+   - Executes predefined playbooks to:
+   - Isolate compromised endpoints
+   - Block malicious IPs at the firewall
+   - Disable user accounts
+   - Quarantine suspicious files
+   - Notifies security teams via email, Slack, or ticketing systems
 
 4. Forensics & Investigation
    
-- Preserves evidence timelines
-- Provides searchable log storage with retention policies
-- Generates visual attack chain diagrams
+   - Preserves evidence timelines
+   - Provides searchable log storage with retention policies
+   - Generates visual attack chain diagrams
 
 5. Compliance & Reporting
 
-Produces scheduled/on-demand reports for:
-- Daily security posture summaries
-- Incident response documentation
-- Compliance audit evidence (PDF/HTML/CSV formats)
+  Produces scheduled/on-demand reports for:
+   - Daily security posture summaries
+   - Incident response documentation
+   - Compliance audit evidence (PDF/HTML/CSV formats)
 
 6. Education & Demonstration
 
-- Includes training modules with guided attack/defense scenarios
-- Documents architecture and detection logic for learning purposes
-- Serves as a portfolio-ready demonstration of defensive security skills
+   - Includes training modules with guided attack/defense scenarios
+   - Documents architecture and detection logic for learning purposes
+   - Serves as a portfolio-ready demonstration of defensive security skills
+     
 
 ## Technical Objectives Achieved:
 
